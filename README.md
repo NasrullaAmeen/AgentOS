@@ -1,6 +1,7 @@
-#  AgentOS
-
-<img src="assets/AgentOS-Logo.jpeg" alt="AgentOS logo" width="400" style="display: block; margin: 0 auto;"/>
+<div align="center">
+<h1>AgentOS</h1>
+<img src="assets/AgentOS-Logo.jpeg" alt="AgentOS logo" width="400"/>
+</div>
 
 
 
