@@ -1,4 +1,4 @@
-# idea.md — AgentOS + ECC: the vision
+# idea.md — AgentOS: the vision
 
 > One operating system for your agents. ECC stays the coding engine; an orchestrator lives above it; skills are capabilities; MCP is the tool layer; memory sits underneath everything.
 

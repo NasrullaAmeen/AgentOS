@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# setup.sh — provision the AgentOS + ECC workspace on a clean machine
+# setup.sh — provision the AgentOS workspace on a clean machine
 # Idempotent: safe to re-run.
 set -euo pipefail
 
@@ -7,7 +7,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 AGENTS_SRC="$SCRIPT_DIR"
 AGENTS_HOME="${AGENTS_HOME:-$HOME/.agents}"
 
-echo "=== AgentOS + ECC Setup ==="
+echo "=== AgentOS Setup ==="
 echo "Source:  $AGENTS_SRC"
 echo "Target:  $AGENTS_HOME"
 echo ""

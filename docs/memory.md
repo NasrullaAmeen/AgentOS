@@ -99,7 +99,7 @@ Structured state alongside the vaults. File-based — no database until there's 
 |---|---|---|---|
 | `logs/` | Append-only session + run logs | append-only, never edit past entries | `2026-09-08-os.md` |
 | `decisions/` | Decision records (ADR-lite: context → alternatives → choice → rationale) | append-only | "chose rdt-cli over PRAW" |
-| `projects/` | Per-project context files agents should load | edit as project evolves | `AgentOS+ECC/context.md` |
+| `projects/` | Per-project context files agents should load | edit as project evolves | `AgentOS/context.md` |
 | `inbox/` | Tasks and ideas awaiting triage | edit freely | "evaluate agent-eval for M3" |
 
 ## Conventions

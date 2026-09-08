@@ -1,4 +1,6 @@
-# AgentOS + ECC
+# AgentOS
+
+<img src="assets/AgentOS-Logo.jpeg" alt="AgentOS logo" width="280"/>
 
 A layered **Agent Operating System** where **ECC** is the coding engine — a whole ecosystem of specialist agents orchestrated over shared memory, sitting on top of the existing Claude Code / opencode harnesses.
 

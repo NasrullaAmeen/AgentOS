@@ -25,7 +25,7 @@
 | `~/.agents/src/archify` | tt-a1i/archify clone (interactive system diagrams) |
 | `~/.agents/os/` | Agent OS runtime: prompts (7), memory (human/ai), data (logs, decisions, projects, inbox) |
 | `~/Projects/buildermethods/{design-os, build-new}` | App templates |
-| `~/Projects/AgentOS+ECC/` | This project's documentation |
+| `~/Projects/AgentOS/` | This project's documentation |
 
 ## Symlink wiring (agentcanon: symlinks, never copies)
 

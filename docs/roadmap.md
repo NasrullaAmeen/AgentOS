@@ -4,7 +4,7 @@
 
 ```mermaid
 gantt
-    title AgentOS + ECC Milestones
+    title AgentOS Milestones
     dateFormat  YYYY-MM-DD
     section M0 Foundation
     Global workspace + agentcanon       :done,    m0a, 2026-09-01, 1d
