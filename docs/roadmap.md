@@ -73,7 +73,7 @@ gantt
 
 ## M3 — Make it autonomous and reliable
 - [x] Scheduled `/os` runs via an external scheduler (systemd timer / LaunchAgent / pm2) — templates in `ops/`
-- [ ] `agent-eval`-style pass rate + cost measurement for the new agents against ECC baselines
+- [x] `agent-eval`-style pass rate + cost measurement for the new agents against ECC baselines — framework in `ops/eval/`, cost logger in `ops/cost/`
 - [x] Add more specialists as recurring needs appear (scraper-builder, api-integration, market-sizing) — see `os/prompts/`
 - [ ] Decide usage of ECC `unified-memory` vault vs the standalone 2Brains dirs (or bridge them)
 - [ ] Optional: `continuous-learning-v2` instincts feeding regular improvements into agent prompts

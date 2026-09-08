@@ -26,6 +26,7 @@
 | `~/.agents/os/` | Agent OS runtime: prompts (7), memory (human/ai), data (logs, decisions, projects, inbox) |
 | `~/Projects/buildermethods/{design-os, build-new}` | App templates |
 | `~/Projects/AgentOS/` | This project's documentation |
+| `~/Projects/AgentOS/ops/` | Scheduled run templates (systemd, launchd, pm2), eval framework, cost logger |
 
 ## Symlink wiring (agentcanon: symlinks, never copies)
 
