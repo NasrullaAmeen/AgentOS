@@ -72,7 +72,7 @@ gantt
   - Side-quest: unblocked the Reddit channel mid-run (rdt-cli v0.4.2 + Brave cookies) — see reflection
 
 ## M3 — Make it autonomous and reliable
-- [ ] Scheduled `/os` runs via an external scheduler (systemd timer / LaunchAgent / pm2)
+- [x] Scheduled `/os` runs via an external scheduler (systemd timer / LaunchAgent / pm2) — templates in `ops/`
 - [ ] `agent-eval`-style pass rate + cost measurement for the new agents against ECC baselines
 - [ ] Add more specialists as recurring needs appear (e.g., scraper-builder, api-integration, market-sizing)
 - [ ] Decide usage of ECC `unified-memory` vault vs the standalone 2Brains dirs (or bridge them)

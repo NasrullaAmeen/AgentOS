@@ -1,0 +1,23 @@
+[Unit]
+Description=AgentOS /os run
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Projects
+Environment="OPENCODE_CONFIG_DIR=%h/.config/orca/opencode-hooks/shared"
+ExecStart=%h/.local/bin/opencode --command "/os <task>"
+# Override in drop-in to set a real task:
+#   systemctl edit agent-os.service
+# and add:
+#   [Service]
+#   Environment="AGENTOS_TASK=Reverse engineer <target>"
+
+# Timeout: kill if the run takes longer than 30 minutes
+TimeoutStartSec=30min
+
+# Logging goes to journalctl
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=agent-os

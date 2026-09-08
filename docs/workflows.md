@@ -86,6 +86,34 @@ ExecStart=/usr/local/bin/opencode --cwd /home/darko/Projects --command /os <task
 
 Regular session-based cron dies when the session ends; external schedulers do not.
 
+### Scheduler templates
+
+Ready-to-use templates live in `ops/`:
+
+| Scheduler | OS | File | Install |
+|---|---|---|---|
+| systemd timer | Linux | `ops/systemd/agent-os.service` + `agent-os.timer` | `systemctl --user enable --now agent-os.timer` |
+| LaunchAgent | macOS | `ops/launchd/com.agentos.plist` | `cp ops/launchd/com.agentos.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.agentos.plist` |
+| pm2 | cross-platform | `ops/pm2/ecosystem.config.js` | `pm2 start ops/pm2/ecosystem.config.js` |
+
+**Important:** replace `<task>` in each template with a real task before enabling. Override `AGENTOS_TASK` via systemd drop-in, the plist `ProgramArguments`, or the pm2 `args` field.
+
+### Verify
+
+```bash
+# systemd
+systemctl --user status agent-os.timer
+journalctl --user -u agent-os.service -f
+
+# launchd
+launchctl list | grep agentos
+log show --predicate 'subsystem == "com.agentos.os"' --last 1h
+
+# pm2
+pm2 logs agent-os
+pm2 monit
+```
+
 ## Command surface (both harnesses)
 
 | Command | Purpose | Harnesses |
