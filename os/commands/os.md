@@ -27,6 +27,12 @@ Arg: the task (e.g. `/os reverse engineer Apify and assess whether we can compet
    - task, slug, agents used, verdict
    - what worked / what didn't / what to change
 
+6. **Cost tracking.** After each agent completes, log its cost entry:
+   ```bash
+   ./ops/cost/logger.sh <agent> "<task>" <model> <tokens_in> <tokens_out> <wall_clock_sec> <slug> <verdict>
+   ```
+   This writes to `ops/cost/runs/<date>.jsonl`. If the harness does not expose token counts, skip this step and note it in the log. Future: integrate automatically when harness token reporting is available.
+
 ## Discipline
 - The 2Brains vault: only agents write to `memory/ai/`; `memory/human/` is read-only for agents.
 - Vault B files are append-only where they record history.

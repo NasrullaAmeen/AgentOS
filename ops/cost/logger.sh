@@ -6,7 +6,8 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 RUNS_DIR="$REPO_ROOT/ops/cost/runs"
-mkdir -p "$RUNS_DIR"
+DATA_LOGS_DIR="$REPO_ROOT/os/data/logs"
+mkdir -p "$RUNS_DIR" "$DATA_LOGS_DIR"
 
 if [ $# -lt 6 ]; then
   echo "Usage: $0 <agent> <task> <model> <tokens_in> <tokens_out> <wall_clock_sec> [slug] [verdict]"
@@ -38,4 +39,11 @@ cat <<EOF >> "$OUTFILE"
 {"timestamp":"$TIMESTAMP","agent":"$AGENT","task":"$TASK","slug":"$SLUG","model":"$MODEL","tokens_in":$TOKENS_IN,"tokens_out":$TOKENS_OUT,"wall_clock_sec":$WALL_CLOCK,"retries":0,"usd_estimate":$USD_ESTIMATE,"verdict":"$VERDICT"}
 EOF
 
+# Also append a summary line to the data logs dir
+SUMMARY="$DATA_LOGS_DIR/${DATE}-costs.jsonl"
+cat <<EOF >> "$SUMMARY"
+{"timestamp":"$TIMESTAMP","agent":"$AGENT","task":"$TASK","model":"$MODEL","tokens_in":$TOKENS_IN,"tokens_out":$TOKENS_OUT,"wall_clock_sec":$WALL_CLOCK,"usd_estimate":$USD_ESTIMATE}
+EOF
+
 echo "Logged: $OUTFILE"
+echo "Summary: $SUMMARY"

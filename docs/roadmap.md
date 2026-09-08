@@ -79,10 +79,10 @@ gantt
 - [x] Optional: `continuous-learning-v2` instincts feeding regular improvements into agent prompts — lightweight plain-file instincts in `ops/instincts/` (ECC migration path documented)
 
 ## M4 — Harden and share
-- [ ] Cost tracking per run (`data/logs/<date>-costs.json`)
+- [x] Cost tracking per run (`data/logs/<date>-costs.json`) — `ops/cost/logger.sh` writes to both `ops/cost/runs/` and `os/data/logs/`
 - [x] Template research runs for the most common tasks (competitor deep-dive, stack evaluation, vulnerability scope) — see `templates/research/`
-- [ ] Extract reusable pieces into their own skills (agentcanon-repo style)
-- [ ] Write up the pattern so it can be reproduced on a clean machine
+- [x] Extract reusable pieces into their own skills (agentcanon-repo style) — agentos-research-templates, agentos-ops, agentos-cost, agentos-eval
+- [x] Write up the pattern so it can be reproduced on a clean machine — setup.sh, CI workflow, and full documentation
 
 ## Guiding principles for every milestone
 1. ECC stays the coding engine — never rewritten, always called.
