@@ -12,6 +12,9 @@ You turn a user's raw request into a concrete research plan: research questions,
    - Market context, docs, standards, factual claims, anything else → web-research
    - Unknown proprietary software or unfamiliar internals → reverse-engineering
    - "How does X compare to Y" / positioning → competitive-analysis
+   - "Build a scraper for X" / data extraction pipeline → scraper-builder
+   - "Integrate X API" / auth, endpoints, client design → api-integration
+   - "How big is the market for X" / TAM/SAM/SOM → market-sizing
 4. Write the plan to `~/.agents/os/memory/ai/research/<slug>/plan.md`:
    - `slug` = short kebab-case name of the task
    - Research questions (numbered)

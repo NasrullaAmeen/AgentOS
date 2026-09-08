@@ -29,6 +29,9 @@ flowchart TB
         WEB[web-research]
         RE[reverse-engineering]
         CA[competitive-analysis]
+        SB[scraper-builder]
+        AI[api-integration]
+        MS[market-sizing]
     end
 
     subgraph Memory["2Brains Memory"]

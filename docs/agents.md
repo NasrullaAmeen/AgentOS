@@ -65,6 +65,9 @@ flowchart TB
 | `web-research` | Market context, docs, standards, factual claims | web search/fetch, documentation-lookup, exa-search | anything factual | `web.md` | ✅ |
 | `reverse-engineering` | Reconstruct how unknown software works | repo-scan, code-tour, git clone, build/probe | "reverse engineer X" | `reverse-engineering.md` | ⚠️ sequential |
 | `competitive-analysis` | Competitor sets, scoring, white space | competitive-platform-analysis → benchmark-methodology → competitive-report-structure | "compare X vs Y" | `competitive.md` | ⚠️ sequential |
+| `scraper-builder` | Data extraction pipelines, scraping architecture, schedules | cheerio/jsdom/Playwright/Lightpanda, repo-scan, web-research | "build a scraper for X", "extract data from X" | `scraper.md`, `schema.json`, `runner.md` | ⚠️ sequential |
+| `api-integration` | API client design, auth flows, retry logic, integration specs | github-research (SDKs), web-research (docs), reverse-engineering | "integrate X API", "wire up X client" | `api.md`, `client-spec.md`, `test-plan.md` | ⚠️ sequential |
+| `market-sizing` | TAM/SAM/SOM, growth rates, segment dynamics, methodology | web-research (analyst reports, filings), github-research (adoption signals) | "how big is the market for X", "TAM for X" | `market-sizing.md`, `sources.md`, `segments.md` | ✅ |
 | `analysis` | Synthesis: merge findings, resolve conflicts, verdict | reads all vault notes | always last, before routing | `synthesis.md` | N/A — reads all |
 
 ## Shared conventions (all agents)
@@ -120,3 +123,12 @@ Runs the three-skill ECC pipeline in order. Output `competitive.md`: Landscape s
 
 ### analysis
 Reads the whole `research/<slug>/` folder, reconciles across agents, weights by confidence. Output `synthesis.md`: Bottom line → Findings by question → Conflicts resolved → Open questions → Implications. Returns a verdict string to the orchestrator: `ready-for-coding` | `need-more-research` | `answer-only`.
+
+### scraper-builder
+Designs data extraction pipelines. Output `scraper.md`: architecture + tool choices + rationale; `schema.json`: output schema; `runner.md`: how to run. Flags legal/ethical concerns (robots.txt, rate limits, PII).
+
+### api-integration
+Designs API integrations. Output `api.md`: API surface summary; `client-spec.md`: implementation spec; `test-plan.md`: integration test scenarios. Flags risks: deprecated endpoints, breaking-change history, vendor lock-in.
+
+### market-sizing
+Estimates market size with methodology. Output `market-sizing.md`: TAM/SAM/SOM, growth rate, key assumptions; `sources.md`: every number with source + confidence; `segments.md`: market segments with sizes. No investment advice.
