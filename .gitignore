@@ -1,0 +1,20 @@
+# Machine-specific runtime — never commit
+os/memory/
+os/data/
+
+# Editor / OS noise
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Dependencies (installed by setup.sh, not vendored)
+node_modules/
+dist/
+build/
+
+# Archives / downloads
+*.zip
+*.tar.gz
+*.tgz
