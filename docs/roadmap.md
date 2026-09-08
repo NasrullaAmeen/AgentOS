@@ -76,7 +76,7 @@ gantt
 - [x] `agent-eval`-style pass rate + cost measurement for the new agents against ECC baselines — framework in `ops/eval/`, cost logger in `ops/cost/`
 - [x] Add more specialists as recurring needs appear (scraper-builder, api-integration, market-sizing) — see `os/prompts/`
 - [x] Decide usage of ECC `unified-memory` vault vs standalone 2Brains dirs — keep 2Brains, bridge later when cross-harness handoffs are proven necessary (see `docs/decisions/ADR-001-memory-strategy.md`)
-- [ ] Optional: `continuous-learning-v2` instincts feeding regular improvements into agent prompts
+- [x] Optional: `continuous-learning-v2` instincts feeding regular improvements into agent prompts — lightweight plain-file instincts in `ops/instincts/` (ECC migration path documented)
 
 ## M4 — Harden and share
 - [ ] Cost tracking per run (`data/logs/<date>-costs.json`)
