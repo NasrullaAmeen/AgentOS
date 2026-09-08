@@ -5,6 +5,17 @@ All seven agents are defined once as canonical pure-text prompts in `~/.agents/o
 - **opencode** — `agent` config entries referencing the canonical file (`prompt: {file:agents/<name>.md}`).
 - **Claude Code** — thin wrappers in `~/.agents/os/agents/<name>.md` (YAML frontmatter + same body), exposed via `~/.claude/agents/` symlink.
 
+## Templates
+
+Reusable templates for common `/os` research tasks live in `templates/research/`. The `research-planner` reads the matching template at run start to calibrate scope, output format, and source priority.
+
+| Template | Trigger | Primary channels | Output |
+|---|---|---|---|
+| `competitor-deep-dive.md` | "Research <competitor>", "Compare X vs Y" | github, web, reddit | `competitive.md` |
+| `stack-evaluation.md` | "Should we use X?", "Evaluate X vs Y" | github, web, reverse-engineering | `web.md`, `github.md`, `synthesis.md` |
+| `vulnerability-scope.md` | "Security review", "Audit for vulnerabilities" | github, web | `synthesis.md` + risk rating |
+| `reverse-engineering.md` | "Reverse engineer X", "How does X work?" | github, web, reverse-engineering | `reverse-engineering.md` |
+
 ## Dispatch flow
 
 ```mermaid

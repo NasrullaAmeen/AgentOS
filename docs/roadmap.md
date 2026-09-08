@@ -80,7 +80,7 @@ gantt
 
 ## M4 — Harden and share
 - [ ] Cost tracking per run (`data/logs/<date>-costs.json`)
-- [ ] Template research runs for the most common tasks (competitor deep-dive, stack evaluation, vulnerability scope)
+- [x] Template research runs for the most common tasks (competitor deep-dive, stack evaluation, vulnerability scope) — see `templates/research/`
 - [ ] Extract reusable pieces into their own skills (agentcanon-repo style)
 - [ ] Write up the pattern so it can be reproduced on a clean machine
 
