@@ -75,7 +75,7 @@ gantt
 - [x] Scheduled `/os` runs via an external scheduler (systemd timer / LaunchAgent / pm2) — templates in `ops/`
 - [x] `agent-eval`-style pass rate + cost measurement for the new agents against ECC baselines — framework in `ops/eval/`, cost logger in `ops/cost/`
 - [x] Add more specialists as recurring needs appear (scraper-builder, api-integration, market-sizing) — see `os/prompts/`
-- [ ] Decide usage of ECC `unified-memory` vault vs the standalone 2Brains dirs (or bridge them)
+- [x] Decide usage of ECC `unified-memory` vault vs standalone 2Brains dirs — keep 2Brains, bridge later when cross-harness handoffs are proven necessary (see `docs/decisions/ADR-001-memory-strategy.md`)
 - [ ] Optional: `continuous-learning-v2` instincts feeding regular improvements into agent prompts
 
 ## M4 — Harden and share

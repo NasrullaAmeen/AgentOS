@@ -117,3 +117,4 @@ Structured state alongside the vaults. File-based — no database until there's 
 - Agents that share Vault B pass context without long prompts.
 - Your judgment in Vault A stays authoritative and uncontaminated by agent speculation.
 - The whole system is plain files — inspectable, greppable, diffable, low-risk.
+- **Decision record**: see `docs/decisions/ADR-001-memory-strategy.md` for why 2Brains was chosen over ECC unified-memory, and when to bridge.
