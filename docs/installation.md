@@ -134,15 +134,20 @@ flowchart LR
 ## Updating
 
 ```bash
-git -C ~/.agents/src/agent-os pull
-git -C ~/.agents/src/bm-skills pull
-git -C ~/.agents/src/agentcanon pull
-git -C ~/.agents/src/agent-reach pull
-git -C ~/.agents/src/agent-skill pull
-git -C ~/.agents/src/archify pull
+./setup.sh                # full provisioning
+./setup.sh --dry-run      # preview without writing
+./setup.sh --skip-clones  # re-run after a failed clone without re-downloading
+./setup.sh --uninstall    # remove runtime data + Claude Code symlinks (keeps ~/.agents/src)
 ```
 
 Skills/commands are symlinked from these clones — one canonical home. After any change, **restart opencode** (config loads once at startup).
+
+## Uninstall
+
+```bash
+./setup.sh --uninstall   # removes runtime data + Claude Code symlinks
+rm -rf ~/.agents          # removes the entire workspace (src clones, skills, data)
+```
 
 ## Updating binaries
 

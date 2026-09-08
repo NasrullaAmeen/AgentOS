@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run setup.sh
+        run: bash setup.sh
+
+      - name: Verify AGENTS.md copied
+        run: test -f ~/.agents/AGENTS.md
+
+      - name: Verify runtime dirs exist
+        run: |
+          test -d ~/.agents/os/prompts
+          test -d ~/.agents/os/commands
+          test -d ~/.agents/os/agents
+          test -d ~/.agents/os/memory/human
+          test -d ~/.agents/os/memory/ai/research
+          test -d ~/.agents/os/data/logs
+
+      - name: Verify symlinks
+        run: |
+          test -L ~/.claude/CLAUDE.md
+          test -L ~/.claude/skills
+          test -L ~/.claude/agents
+          test -L ~/.claude/commands/os.md
+          test -L ~/.agents/skills/agent-reach
+          test -L ~/.agents/skills/lightpanda
+          test -L ~/.agents/skills/lightpanda-pandascript
+          test -L ~/.agents/skills/archify
+
+      - name: Verify upstream clones
+        run: |
+          test -d ~/.agents/src/agent-os
+          test -d ~/.agents/src/bm-skills
+          test -d ~/.agents/src/agentcanon
+          test -d ~/.agents/src/agent-reach
+          test -d ~/.agents/src/agent-skill
+          test -d ~/.agents/src/archify
+
+      - name: Verify setup.sh idempotency
+        run: bash setup.sh
